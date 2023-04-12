@@ -1,0 +1,132 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container{
+    display: grid;
+    justify-content: center;
+    align-content:center ;
+    border: 1px solid ;
+    width: 100vw;
+    grid-template-columns: 60% 50%;
+    grid-template-rows: 150px 1fr 40px;
+    grid-template-areas: 
+    "hd hd"
+    "main side"
+    "ft ft";
+    height: 100%;
+    overflow-x: hidden;
+    margin: auto;
+
+}
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 300px;
+    grid-area: hd;
+    margin-top: -40px;
+}
+.header img{
+    width: 200px;
+    height: 100px;
+}
+.header li{
+    padding: 20px;
+    gap: 20px;
+    list-style: none;
+    display: inline;
+    font-size: larger;
+    font-weight: bold;
+    font-family: sans-serif;
+    cursor: pointer;
+}
+.header li:hover{
+   color: rgb(65, 65, 144);
+}
+.header button{
+    background-color: rgb(64, 64, 136);
+    height: 50px;
+    width: 130px;
+    color: white;
+    border: 1px solid blue;
+    border-radius: 5px;
+    margin: 50px;
+    cursor: pointer;
+}
+.content{
+    grid-area: main;
+    margin: 80px;
+    padding: 20px;
+}
+.content h1{
+    text-decoration: underline;
+    color: rgb(67, 67, 137);
+    
+    margin-top: -50px;
+}
+.content p{
+    font-family: sans-serif;
+}
+.content img{
+    height:400px;
+    border: 1px solid black;
+    border-radius: 30px;
+}
+
+.aside{
+    grid-area: side;
+    margin: 80px;
+}
+.aside img{
+    border: 1px solid beige;
+    border-radius: 30px;
+}
+.aside h1{
+    text-decoration: underline;
+    color: rgb(67, 67, 137);
+}
+.aside p{
+    font-family: sans-serif;
+}
+.footer{
+    grid-area: ft;
+    margin: 20px;
+    padding: 30px;
+    display: flex;gap: 150px;
+    
+}
+.ft{
+    margin: 20px;
+    padding: 10px;
+}
+.ft li{
+    list-style: none;
+    padding: 8px;
+    list-style: ;
+}
+.ft h1{
+    color: rgb(67, 67, 137) ;
+}
+.ft p{
+    font-weight: bold;
+}
+.ft a{
+    color:black ;
+    text-decoration: none;
+}
+@media  (max-width:992px){
+.container{
+    grid-template-areas: "hd hd"
+    "main side"
+    "ft ft";
+    grid-template-columns: minmax(0,1fr) minmax(0,1fr);
+}
+}
+@media (min-width:576){
+    .content ,.aside{
+        grid-template-columns: minmax(0,1fr);
+    }
+
+}
